@@ -34,12 +34,21 @@
           if (elemRequired) {
             let elemType = elemForms[i][j].type;
             let elemValue = elemForms[i][j].value;
+            let elemName = elemForms[i][j].name;
             let object = elemForms[i][j];
             if (elemType == "text") {
               validForm = validInput(elemValue);
             }
             if (elemType == "number") {
               validForm = validInput(elemValue);
+            }
+            if(elemType == "date"){
+              validForm = validInput(elemValue);
+            }
+            if(elemType == "radio"){
+              debugger;
+              validForm = validRadio(elemName);
+              console.log(object.id);
             }
             if (elemType == "email") {
               if (validInput(elemValue)) {
@@ -50,6 +59,7 @@
               }
             }
             if (!validForm) {
+              debugger;
               object.focus();
               alertView(0);
               return false;
@@ -85,6 +95,124 @@
     };
     // END VALIDEMAIL
 
+    /* VALIDRADIO FUNTION
+    Author: Laura Grisales
+    Date: 11/02/2019
+    Description: Receives the radio's name and search if one of the radio is checked in that group's name
+    */
+    function validRadio(element){
+      let elemChecked = document.getElementsByName(element);
+      let check = 0;
+      let validate = false;
+      for(let i = 0; i < elemChecked.length; i++){
+        if(elemChecked[i].checked){
+          console.log(elemChecked[i].id);
+          check++;
+        }
+        if(check > 0){
+          validate = true;
+          break;
+        }
+      }
+      debugger;
+      return validate;
+    };
+    // FIN VALIDRADIO
+
+    /* GETDATAITEMS FUNTION
+    Author: Diego Casallas
+    Date: 06/02/2019
+    Description: Validate and add the elements of the modals.
+    */
+    function getDataItems(section){
+		var valueList=new Array();
+		var table;
+		var idForm="#panelItem_"+selectNewItem;
+		var elemens=document.querySelector(idForm);
+		var forms = elemens.querySelectorAll('form');
+		var validate = true;
+		var count=0;
+		var listTable=new Array('tableProperty','tableVehicle','tableBeneficiaries');
+		var table=document.getElementById(listTable[selectNewItem]);
+		listDataTableValue=[];
+    getSection(section);
+		for(var i=0;i<forms.length;i++){
+			for(var j=0;j<forms[i].length;j++){
+				var elementValue = forms[i][j].value;
+				var elementType = forms[i][j].type
+				var elementsRequire = forms[i][j].required;
+				var element = forms[i][j];
+				var nameElement=element.name;
+				if (elementType == "text" && elementsRequire) {
+					if (elementValue == null || elementValue == "" || elementValue.length == 0) {
+						validate = false;
+						element.classList.add('validateError');
+						break;
+
+					} else {
+						listDataTableValue[count]=elementValue;
+						validate=true;
+						count++;
+						element.classList.remove('validateError');
+					}
+				}else{
+					if(elementType=="text"){
+						listDataTableValue[count]=elementValue;
+						count++;
+					}
+				}
+			if (elementType == "radio" && elementsRequire) {
+			if(validataChecked(nameElement)){
+			if(element.checked){
+			validate=true;
+			listDataTableValue[count]=elementValue;
+			count++;
+			}
+			}else{
+			validate = false;
+			break;
+			}
+			}
+			}
+    }
+
+    if(validate){
+      selectCreateCondition(table,listDataTableValue);    
+      //cleanItem();
+      $('#myModal').modal('hide');
+      }else{
+      alert("Verifique los campos");
+      listDataTableValue=[];
+      } 
+    };
+
+  function selectCreateCondition(table, data) {
+    var newRow;
+    newRow = table.insertRow(table.rows.length);
+    newRow.id = numCellRow;
+
+    if (table.id == "tableProperty") {
+      newRow.className = "dataRowProperty";
+    } else if (table.id == "tableVehicle") {
+      newRow.className = "dataRowVehicle";
+    }
+
+    for (var j = 0; j <= data.length; j++) {
+      var newCell = newRow.insertCell(j);
+      // Append a text node to the cell
+      if (j == data.length) {
+        var newButton = document.createElement('span');
+        newButton.innerHTML = '<button class="btn btn-danger btn-sm" title="Eliminar Item"  onclick="deleteCell(' + numCellRow + ')" >x</button>';
+        newCell.appendChild(newButton);
+        numCellRow++;
+      } else {
+        newCell.appendChild(document.createTextNode(data[j]));
+        }
+      };
+    };
+
+
+
     /* ALERTVIEW FUNTION
     Author: Laura Grisales
     Date: 05/02/2019
@@ -110,7 +238,7 @@
       document.getElementById(id).classList.remove("invisible");
       document.getElementById(id).classList.add("visible");
     };
-    // FIN VIEWMODALITEM
+    // FIN VIEWMODALITEM    
   </script>
 </head>
 
@@ -122,11 +250,11 @@
           <div class="form-group col-lg-4">
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radCreditType" id="radCredit1" value="option1">
+                <input class="form-check-input" type="radio" name="radFormType" id="radCredit1" value="option1" required="true">
                 <small class="form-check-label" for="radCredit1">Asociación</small>
               </label>
               <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radCreditType" id="radCredit2" value="option2">
+                <input class="form-check-input" type="radio" name="radFormType" id="radCredit2" value="option2" required="true">
                 <small class="form-check-label" for="radCredit2">Actualización</small>
               </label>
             </div>
@@ -134,7 +262,7 @@
           <div class="form-group col-lg-4">
             <label for="formDate" class="col-lg-5">Fecha Solicitud</label>
             <div class="col-lg-5">
-              <input type="date" class="form-control" id="formDate" required="true">
+              <input type="date" class="form-control" id="formDate" required="true" required="true">
             </div>            
           </div>
           <div class="form-group col-lg-4">
@@ -156,15 +284,15 @@
           <div class="form-group col-lg-4">
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radCreditType" id="radCredit1" value="option1">
+                <input class="form-check-input" type="radio" name="radCreditType" id="radCredit1" value="option1" required="true">
                 <small class="form-check-label" for="radCredit1">Nuevo</small>
               </label>
               <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radCreditType" id="radCredit2" value="option2">
+                <input class="form-check-input" type="radio" name="radCreditType" id="radCredit2" value="option2" required="true">
                 <small class="form-check-label" for="radCredit2">Novación</small>
               </label>
               <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radCreditType" id="radCredit3" value="option3">
+                <input class="form-check-input" type="radio" name="radCreditType" id="radCredit3" value="option3" required="true">
                 <small class="form-check-label" for="radCredit3">Modificación</small>
               </label>
             </div>            
@@ -175,11 +303,11 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-6">
-                <input class="form-check-input" type="radio" name="radCreditFor" id="radCreditFor1" value="option1">
+                <input class="form-check-input" type="radio" name="radCreditFor" id="radCreditFor1" value="option1" required="true">
                 <small class="form-check-label" for="radCreditFor1">Deudor</small>
               </label>
               <label class="form-check form-check-inline col-6">
-                <input class="form-check-input" type="radio" name="radCreditFor" id="radCreditFor2" value="option2">
+                <input class="form-check-input" type="radio" name="radCreditFor" id="radCreditFor2" value="option2" required="true">
                 <small class="form-check-label" for="radCreditFor2">Codeudor</small>
               </label>
             </div>            
@@ -193,7 +321,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupPrepend">$</span>
                 </div>
-                <input type="number" class="form-control" id="creditAmount" maxlength="11" placeholder="0.00"
+                <input type="number" class="form-control" id="creditAmount" maxlength="11" placeholder="0.00" min="1"
                   aria-describedby="inputGroupPrepend" required="true">
               </div>
             </div>
@@ -217,25 +345,22 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radCreditPick" id="radCreditPick1" value="option1">
+                <input class="form-check-input" type="radio" name="radCreditPick" id="radCreditPick1" value="option1" required="true">
                 <small class="form-check-label" for="radCreditPick1">Si</small>
               </label>
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radCreditPick" id="radCreditPick2" value="option2">
+                <input class="form-check-input" type="radio" name="radCreditPick" id="radCreditPick2" value="option2" required="true">
                 <small class="form-check-label" for="radCreditPick2">No</small>
               </label>
             </div>
           </div>
           <div class="form-group col-lg-3">
             <div class="col-lg-5">
-              <label for="creditTerm">Plazo </label>
-              <small id="creditTermMonths" class="text-muted">
-                (en meses)
-              </small>
+              <label for="creditTerm">Plazo <small id="creditTermMonths" class="text-muted"> (en meses) </small></label>              
             </div>
-            <div class="col-lg-7">
-              <input type="number" class="form-control col-lg-12" min="0" id="creditTerm" required="true">
-            </div>
+            <select id="creditTerm" class="form-control col-lg-7">
+              <option selected>Seleccione</option>
+            </select>
           </div>
           <div class="form-group col-lg-2">
             <button type="button" id="btnSubmit1" onclick="getSection(1)" title="Continuar" class="btn btn-success btn-lg">Continuar</button>
@@ -292,11 +417,11 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicTypeDoc" id="radApplicTypeDoc1" value="option1">
+                <input class="form-check-input" type="radio" name="radApplicTypeDoc" id="radApplicTypeDoc1" value="option1" required="true">
                 <small class="form-check-label" for="radApplicTypeDoc1">C.C.</small>
               </label>
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicTypeDoc" id="radApplicTypeDoc2" value="option2">
+                <input class="form-check-input" type="radio" name="radApplicTypeDoc" id="radApplicTypeDoc2" value="option2" required="true">
                 <small class="form-check-label" for="radApplicTypeDoc2">C.E.</small>
               </label>
             </div>            
@@ -306,7 +431,7 @@
               <label for="ApplicId">Identificación No. </label>
             </div>
             <div class="col-lg-8">
-              <input type="number" class="form-control col-lg-12" id="ApplicId" required="true">
+              <input type="number" class="form-control col-lg-12" id="ApplicId" min="0" required="true" >
             </div>
           </div>
           <div class="form-group col-lg-4">
@@ -314,7 +439,7 @@
               <label for="ApplicExped">Fecha de Expedición</label>
             </div>            
             <div class="col-lg-7">
-              <input type="date" class="form-control col-lg-12" id="ApplicExped" required="true">
+              <input type="date" class="form-control col-lg-12" id="ApplicExped" min="1930-01-01" required="true" >
             </div>
           </div>
         </div>
@@ -324,7 +449,7 @@
               <label for="ApplicBornDate">Fecha de Nacimiento</label>
             </div>
             <div class="col-lg-7">
-              <input type="date" class="form-control col-lg-12" id="ApplicBornDate" required="true">
+              <input type="date" class="form-control col-lg-12" id="ApplicBornDate" min="1930-01-01" required="true">
             </div>
           </div>
           <div class="form-group col-lg-4">
@@ -367,11 +492,11 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicGender" id="radApplicGender1" value="option1">
+                <input class="form-check-input" type="radio" name="radApplicGender" id="radApplicGender1" value="option1" required="true">
                 <small class="form-check-label" for="radApplicGender1">M</small>
               </label>
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicGender" id="radApplicGender2" value="option2">
+                <input class="form-check-input" type="radio" name="radApplicGender" id="radApplicGender2" value="option2" required="true">
                 <small class="form-check-label" for="radApplicGender2">F</small>
               </label>
             </div>            
@@ -384,27 +509,27 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus1" value="option1">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus1" value="option1" required="true">
                 <small class="form-check-label" for="radApplicStatus1">Soltero</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus2" value="option2">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus2" value="option2" required="true">
                 <small class="form-check-label" for="radApplicStatus2">Separado</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus3" value="option3">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus3" value="option3" required="true">
                 <small class="form-check-label" for="radApplicStatus3">Casado</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus4" value="option4">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus4" value="option4" required="true">
                 <small class="form-check-label" for="radApplicStatus4">Unión Libre</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus5" value="option5">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus5" value="option5" required="true">
                 <small class="form-check-label" for="radApplicStatus5">Divorciado</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus6" value="option6">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus6" value="option6" required="true">
                 <small class="form-check-label" for="radApplicStatus6">Viudo</small>
               </label>
             </div>            
@@ -433,27 +558,27 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca1" value="option1">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca1" value="option1" required="true">
                 <small class="form-check-label" for="radApplicEduca1">Primaria</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca2" value="option2">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca2" value="option2" required="true">
                 <small class="form-check-label" for="radApplicEduca2">Secundaria</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca3" value="option3">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca3" value="option3" required="true">
                 <small class="form-check-label" for="radApplicEduca3">Universitario</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca4" value="option4">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca4" value="option4" required="true">
                 <small class="form-check-label" for="radApplicEduca4">Técnico/Tecnólogo</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca5" value="option5">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca5" value="option5" required="true">
                 <small class="form-check-label" for="radApplicEduca5">Postgrado</small>
               </label>
               <label class="form-check form-check-inline col-lg-1">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca6" value="option6">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca6" value="option6" required="true">
                 <small class="form-check-label" for="radApplicEduca6">Ninguno</small>
               </label>
             </div>
@@ -466,15 +591,15 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType1" value="option1">
+                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType1" value="option1" required="true">
                 <small class="form-check-label" for="radApplicHomeType1">Propia</small>
               </label>
               <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType2" value="option2">
+                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType2" value="option2" required="true">
                 <small class="form-check-label" for="radApplicHomeType2">Arrendada</small>
               </label>
               <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType3" value="option3">
+                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType3" value="option3" required="true">
                 <small class="form-check-label" for="radApplicHomeType3">Familiar</small>
               </label>
             </div>
@@ -504,7 +629,7 @@
               <label for="ApplicCellphone">Teléfono Móvil </label>
             </div>
             <div class="col-lg-9">
-              <input type="number" class="form-control col-lg-12" id="ApplicCellphone" required="true">
+              <input type="number" class="form-control col-lg-12" id="ApplicCellphone" required="true" >
             </div>
           </div>
           <div class="form-group col-lg-4">
@@ -535,15 +660,15 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend1" value="option1">
+                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend1" value="option1" required="true">
                 <small class="form-check-label" for="radApplicSend1">E-mail Personal</small>
               </label>
               <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend2" value="option2">
+                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend2" value="option2" required="true">
                 <small class="form-check-label" for="radApplicSend2">E-mail Laboral</small>
               </label>
               <label class="form-check form-check-inline col-lg-5">
-                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend3" value="option3">
+                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend3" value="option3" required="true">
                 <small class="form-check-label" for="radApplicSend3">Dirección Residencia</small>
               </label>
             </div>
@@ -556,11 +681,11 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicSendCell" id="radApplicSendCell1" value="option1">
+                <input class="form-check-input" type="radio" name="radApplicSendCell" id="radApplicSendCell1" value="option1" required="true">
                 <small class="form-check-label" for="radApplicSendCell1">Si</small>
               </label>
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicSendCell" id="radApplicSendCell2" value="option2">
+                <input class="form-check-input" type="radio" name="radApplicSendCell" id="radApplicSendCell2" value="option2" required="true">
                 <small class="form-check-label" for="radApplicSendCell2">No</small>
               </label>
             </div>
@@ -597,7 +722,7 @@
               <label for="WorkName">Nombre Empresa/ Negocio </label>
             </div>
             <div class="col-lg-7">
-              <input type="text" class="form-control col-lg-12" id="WorkName" >
+              <input type="text" class="form-control col-lg-12" id="WorkName" required="true">
             </div>
           </div>
           <div class="form-group col-lg-3">
@@ -605,7 +730,7 @@
               <label for="WorkPhone">Teléfono </label>
             </div>
             <div class="col-lg-7">
-              <input type="number" class="form-control col-lg-12" id="WorkPhone" >
+              <input type="number" class="form-control col-lg-12" id="WorkPhone" required="true">
             </div>
           </div>
           <div class="form-group col-lg-2">
@@ -652,7 +777,7 @@
             </div>
             <div class="col-lg-7">
               <div class="input-group">
-                <input type="text" class="form-control" id="WorkDir" >
+                <input type="text" class="form-control" id="WorkDir" required="true">
               </div>
             </div>
           </div>
@@ -663,7 +788,7 @@
               <label for="WorkAdmission">Fecha de Ingreso</label>
             </div>
             <div class="col-lg-8">
-              <input type="date" class="form-control col-lg-12" id="WorkAdmission">
+              <input type="date" class="form-control col-lg-12" id="WorkAdmission" required="true">
             </div>
           </div>
           <div class="form-group col-lg-4">
@@ -690,11 +815,11 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radWorkOfficial" id="radWorkOfficial1" value="option1">
+                <input class="form-check-input" type="radio" name="radWorkOfficial" id="radWorkOfficial1" value="option1" required="true">
                 <small class="form-check-label" for="radWorkOfficial1">Si</small>
               </label>
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radWorkOfficial" id="radWorkOfficial2" value="option2">
+                <input class="form-check-input" type="radio" name="radWorkOfficial" id="radWorkOfficial2" value="option2" required="true">
                 <small class="form-check-label" for="radWorkOfficial2">No</small>
               </label>
             </div>
@@ -734,11 +859,11 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radWorkResource" id="radWorkResource1" value="option1">
+                <input class="form-check-input" type="radio" name="radWorkResource" id="radWorkResource1" value="option1" required="true">
                 <small class="form-check-label" for="radWorkResource1">Si</small>
               </label>
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radWorkResource" id="radWorkResource2" value="option2">
+                <input class="form-check-input" type="radio" name="radWorkResource" id="radWorkResource2" value="option2" required="true">
                 <small class="form-check-label" for="radWorkResource2">No</small>
               </label>
             </div>
@@ -749,11 +874,11 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radWorkExposed" id="radWorkExposed1" value="option1">
+                <input class="form-check-input" type="radio" name="radWorkExposed" id="radWorkExposed1" value="option1" required="true">
                 <small class="form-check-label" for="radWorkExposed1">Si</small>
               </label>
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radWorkExposed" id="radWorkExposed2" value="option2">
+                <input class="form-check-input" type="radio" name="radWorkExposed" id="radWorkExposed2" value="option2" required="true">
                 <small class="form-check-label" for="radWorkExposed2">No</small>
               </label>
             </div>
@@ -784,7 +909,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupPrepend">$</span>
                 </div>
-                <input type="number" class="form-control" id="FinanSalary" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
+                <input type="number" class="form-control" id="FinanSalary" min="0" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
                 required="true">
               </div>
             </div>
@@ -1201,11 +1326,11 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radIntMoney" id="radIntMoney1" value="option1">
+                <input class="form-check-input" type="radio" name="radIntMoney" id="radIntMoney1" value="option1" required="true">
                 <small class="form-check-label" for="radIntMoney1">Si</small>
               </label>
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radIntMoney" id="radIntMoney2" value="option2">
+                <input class="form-check-input" type="radio" name="radIntMoney" id="radIntMoney2" value="option2" required="true">
                 <small class="form-check-label" for="radIntMoney2">No</small>
               </label>
             </div>
@@ -1241,11 +1366,11 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-10">
-                <input class="form-check-input" type="radio" name="radIntCta" id="radIntCta1" value="option1">
+                <input class="form-check-input" type="radio" name="radIntCta" id="radIntCta1" value="option1" required="true">
                 <small class="form-check-label" for="radIntCta1">Si</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radIntCta" id="radIntCta2" value="option2">
+                <input class="form-check-input" type="radio" name="radIntCta" id="radIntCta2" value="option2" required="true">
                 <small class="form-check-label" for="radIntCta2">No</small>
               </label>
             </div>
@@ -1426,7 +1551,7 @@
             </div>
             <div class="col-lg-9">
               <div class="input-group">
-                <input type="number" class="form-control" id="FamilyRefPhone" required="true">
+                <input type="number" class="form-control" id="FamilyRefPhone" min="0" required="true">
               </div>
             </div>
           </div>
@@ -1482,7 +1607,7 @@
             </div>
             <div class="col-lg-9">
               <div class="input-group">
-                <input type="number" class="form-control" id="PersonRefPhone">
+                <input type="number" class="form-control" id="PersonRefPhone" min="0">
               </div>
             </div>
           </div>
@@ -1492,7 +1617,7 @@
             </div>
             <div class="col-lg-9">
               <div class="input-group">
-                <input type="number" class="form-control" id="PersonRefCell" required="true">
+                <input type="number" class="form-control" id="PersonRefCell" min="0" required="true">
               </div>
             </div>
           </div>
@@ -1526,11 +1651,11 @@
             </div>
             <div class="form-check-inline">
               <label class="form-check form-check-inline col-lg-8">
-                <input class="form-check-input" type="radio" name="radOutlayCta" id="radOutlayCta1" value="option1">
+                <input class="form-check-input" type="radio" name="radOutlayCta" id="radOutlayCta1" value="option1" required="true">
                 <small class="form-check-label" for="radOutlayCta1">Ahorros</small>
               </label>
               <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radOutlayCta" id="radOutlayCta2" value="option2">
+                <input class="form-check-input" type="radio" name="radOutlayCta" id="radOutlayCta2" value="option2" required="true">
                 <small class="form-check-label" for="radOutlayCta2">Corriente</small>
               </label>
             </div>
@@ -1553,7 +1678,7 @@
             </div>
             <div class="col-lg-9">
               <div class="input-group">
-                <input type="number" class="form-control" id="OutlayCtaNum" required="true">
+                <input type="number" class="form-control" id="OutlayCtaNum" required="true" >
               </div>
             </div>
           </div>
@@ -1588,7 +1713,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupPrepend">$</span>
                 </div>
-                <input type="number" class="form-control" id="OutlayValue" placeholder="0.00" aria-describedby="inputGroupPrepend"
+                <input type="number" class="form-control" id="OutlayValue" placeholder="0.00" min="0" aria-describedby="inputGroupPrepend"
                 required="true">
               </div>
             </div>
@@ -1619,90 +1744,81 @@
           <div class="modal-body">
             <div id="panelItem_0" class="row panelItems invisible">
               <form class="form-inline">
-                <div class="form-row col-lg-12">
-                  <div class="form-group col-lg-6">
-                    <div class="col-lg-4">
-                      <label for="inputItem0" class="col-form-label smallLabel"> Tipo Inmueble</label>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="input-group">
-                        <input type="text" class="form-control newItems" id="inputItem0"  />
-                      </div>
-                    </div>
+                <div class="form-group col-lg-6">
+                  <div class="col-lg-4">
+                    <label for="inputItem0" class="col-form-label smallLabel"> Tipo Inmueble</label>
                   </div>
-                  <div class="form-group col-lg-6">
-                    <div class="col-lg-4">
-                      <label for="inputItem1" class="col-form-label smallLabel">Ciudad/Barrio</label>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="input-group">
-                        <input type="text" class="form-control newItems" id="inputItem1"  />
-                      </div>
+                  <div class="col-lg-8">
+                    <div class="input-group">
+                      <input type="text" class="form-control newItems" id="inputItem0" required="true" />
                     </div>
                   </div>
                 </div>
-                <div class="form-row col-lg-12">
-                  <div class="form-group col-lg-8">
-                    <div class="col-lg-3">
-                      <label for="inputItem2" class="col-form-label smallLabel"> Dirección</label>
-                    </div>
-                    <div class="col-lg-9">
-                      <div class="input-group">
-                        <input type="text" class="form-control newItems" id="inputItem2"  />
-                      </div>
+                <div class="form-group col-lg-6">
+                  <div class="col-lg-4">
+                    <label for="inputItem1" class="col-form-label smallLabel">Ciudad/Barrio</label>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="input-group">
+                      <input type="text" class="form-control newItems" id="inputItem1" required="true" />
                     </div>
                   </div>
                 </div>
-                <div class="form-row col-lg-12">
-                  <div class="form-group col-lg-6">
-                    <div class="col-lg-4">
-                      <label for="InputItem3">Valor Comercial</label>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="inputGroupPrepend">$</span>
-                        </div>
-                        <input type="number" class="form-control newItems" id="InputItem3" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                          >
-                      </div>
+                <div class="form-group col-lg-8">
+                  <div class="col-lg-3">
+                    <label for="inputItem2" class="col-form-label smallLabel"> Dirección</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <div class="input-group">
+                      <input type="text" class="form-control newItems" id="inputItem2" required="true" />
                     </div>
                   </div>
-                  <div class="form-group col-lg-6">
-                    <div class="col-lg-4">
-                      <label for="InputItem4">Valor Hipoteca</label>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="inputGroupPrepend">$</span>
-                        </div>
-                        <input type="number" class="form-control newItems" id="InputItem4" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                          >
+                </div>
+                <div class="form-group col-lg-6">
+                  <div class="col-lg-4">
+                    <label for="InputItem3">Valor Comercial</label>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupPrepend">$</span>
                       </div>
+                      <input type="number" class="form-control newItems" id="InputItem3" min="0" placeholder="0.00" aria-describedby="inputGroupPrepend">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-lg-6">
+                  <div class="col-lg-4">
+                    <label for="InputItem4">Valor Hipoteca</label>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupPrepend">$</span>
+                      </div>
+                      <input type="number" class="form-control newItems" id="InputItem4" placeholder="0.00" aria-describedby="inputGroupPrepend">
                     </div>
                   </div>
                 </div>
               </form>
-            </div>
-            <div id="panelItem_1" class="row panelItems invisible">
-              <form class="form-inline">
-                <div class="form-row col-lg-12">
+              </div>
+              <div id="panelItem_1" class="row panelItems invisible">
+                <form class="form-inline">
                   <div class="form-group col-lg-6">
                     <div class="col-lg-3">
                       <label>Tipo Vehículo</label>
                     </div>
                     <div class="form-check-inline">
                       <label class="form-check form-check-inline col-lg-4">
-                        <input class="form-check-input" type="radio" name="RadVehicle" id="RadVehicle1" value="option1">
+                        <input class="form-check-input" type="radio" name="RadVehicle" id="RadVehicle1" value="option1" required="true">
                         <small class="form-check-label" for="RadVehicle1">Automóvil</small>
                       </label>
                       <label class="form-check form-check-inline col-lg-4">
-                        <input class="form-check-input" type="radio" name="RadVehicle" id="RadVehicle2" value="option2">
+                        <input class="form-check-input" type="radio" name="RadVehicle" id="RadVehicle2" value="option2" required="true">
                         <small class="form-check-label" for="RadVehicle2">Moto</small>
                       </label>
                       <label class="form-check form-check-inline col-lg-4">
-                        <input class="form-check-input" type="radio" name="RadVehicle" id="RadVehicle3" value="option3">
+                        <input class="form-check-input" type="radio" name="RadVehicle" id="RadVehicle3" value="option3" required="true">
                         <small class="form-check-label" for="RadVehicle3">Otro</small>
                       </label>
                     </div>
@@ -1713,24 +1829,24 @@
                     </div>
                     <div class="form-check-inline">
                       <label class="form-check form-check-inline col-lg-6">
-                        <input class="form-check-input" type="radio" name="RadTypeVehicle" id="RadTypeVehicle1" value="option1">
+                        <input class="form-check-input" type="radio" name="RadTypeVehicle" id="RadTypeVehicle1" value="option1"
+                          required="true">
                         <small class="form-check-label" for="RadTypeVehicle1">Público</small>
                       </label>
                       <label class="form-check form-check-inline col-lg-6">
-                        <input class="form-check-input" type="radio" name="RadTypeVehicle" id="RadTypeVehicle2" value="option2">
+                        <input class="form-check-input" type="radio" name="RadTypeVehicle" id="RadTypeVehicle2" value="option2"
+                          required="true">
                         <small class="form-check-label" for="RadTypeVehicle2">Particular</small>
                       </label>
                     </div>
                   </div>
-                </div>
-                <div class="form-row col-lg-12">
                   <div class="form-group col-lg-4">
                     <div class="col-lg-3">
                       <label for="inputItem7" class="col-form-label smallLabel"> Modelo</label>
                     </div>
                     <div class="col-lg-9">
                       <div class="input-group">
-                        <input type="text" class="form-control newItems" id="inputItem7"  />
+                        <input type="text" class="form-control newItems" id="inputItem7" required="true" />
                       </div>
                     </div>
                   </div>
@@ -1740,7 +1856,7 @@
                     </div>
                     <div class="col-lg-9">
                       <div class="input-group">
-                        <input type="text" class="form-control newItems" id="inputItem8"  />
+                        <input type="text" class="form-control newItems" id="inputItem8" required="true" />
                       </div>
                     </div>
                   </div>
@@ -1750,13 +1866,11 @@
                     </div>
                     <div class="col-lg-9">
                       <div class="input-group">
-                        <input type="text" class="form-control newItems" id="inputItem9"  />
+                        <input type="text" class="form-control newItems" id="inputItem9" required="true" />
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="form-row col-lg-12">
-                  <div class="form-group col-lg-6">
+                  <div class="form-row col-lg-12">
                     <div class="col-lg-4">
                       <label for="InputItem10">Valor Comercial</label>
                     </div>
@@ -1765,8 +1879,8 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="inputGroupPrepend">$</span>
                         </div>
-                        <input type="number" class="form-control newItems" id="InputItem10" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                          >
+                        <input type="number" class="form-control newItems" id="InputItem10" placeholder="0.00" min="0"
+                          aria-describedby="inputGroupPrepend" required="true">
                       </div>
                     </div>
                   </div>
@@ -1779,13 +1893,12 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="inputGroupPrepend">$</span>
                         </div>
-                        <input type="number" class="form-control newItems" id="InputItem11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                          >
+                        <input type="number" class="form-control newItems" id="InputItem11" min="0" placeholder="0.00"
+                          aria-describedby="inputGroupPrepend">
                       </div>
                     </div>
                   </div>
-                </div>
-              </form>
+                </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
