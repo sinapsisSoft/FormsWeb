@@ -11,7 +11,7 @@ var strValues='{';
 /* GETSECTION FUNCTION
 Description: Search all the sections and identify all the inputs that belong to it.
 */
-function getSection(section,Nextsection) { //Envio el section siguiente. Habilito el boton apenas todo este completo
+function getSection(section,button) { 
   let elemSection = document.querySelectorAll('section');
   let elemForms = elemSection[section].querySelectorAll('form');
   let validForm = true;
@@ -48,10 +48,7 @@ function getSection(section,Nextsection) { //Envio el section siguiente. Habilit
           object.focus();
           alertView(0);
           return false;
-        }
-        else{
-
-        }
+        }        
       }
             /*
             Author: Diego Casallas
@@ -60,6 +57,9 @@ function getSection(section,Nextsection) { //Envio el section siguiente. Habilit
             strValues+='"'+elemId+'":"'+elemValue+'",';
             /*End Update*/
         }
+    }
+    if (validForm) {
+      enableForm(button);
     }
     /*
     Author: Diego Casallas
@@ -77,8 +77,9 @@ function getSection(section,Nextsection) { //Envio el section siguiente. Habilit
 /* ENABLEFORM FUNCTION
 Description: Receives the button to enable the next section
 */
-function enableForm(button){
-let button = "btnSubmit"+button;
+function enableForm(button) {
+  let btn = "btnSubmit" + button;
+  let btnEnabled = document.getElementById(btn).disabled = false;
 }
 // END ENABLEFORM
 
