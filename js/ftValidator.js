@@ -8,47 +8,56 @@ var obj;
 var arrObject = new Array();
 var strValues='{';
 
-/* GETSECTION FUNTION
+/* GETSECTION FUNCTION
 Description: Search all the sections and identify all the inputs that belong to it.
 */
-function getSection(section) {
-    let elemSection = document.querySelectorAll('section');
-    console.log(elemSection);
-    let elemForms = elemSection[section].querySelectorAll('form');
-    let validForm = true;
-    for (let i = 0; i < elemForms.length; i++) {
-        for (let j = 0; j < elemForms[i].length; j++) {
-            let elemRequired = elemForms[i][j].required;
-            let elemType = elemForms[i][j].type;
-            let elemValue = elemForms[i][j].value;
-            let object = elemForms[i][j];
-            let elementId = elemForms[i][j].id;
-            if (elemRequired) {
+function getSection(section,Nextsection) { //Envio el section siguiente. Habilito el boton apenas todo este completo
+  let elemSection = document.querySelectorAll('section');
+  let elemForms = elemSection[section].querySelectorAll('form');
+  let validForm = true;
+  for (let i = 0; i < elemForms.length; i++) {
+    for (let j = 0; j < elemForms[i].length; j++) {
+      let elemRequired = elemForms[i][j].required;
+      let elemType = elemForms[i][j].type;
+      let elemValue = elemForms[i][j].value;
+      let object = elemForms[i][j];
+      let elemId = elemForms[i][j].id;
+      let elemName = elemForms[i][j].name;
+      if (elemRequired) {
+        if (elemType == "text") {
+          validForm = validInput(elemValue);
+        }
+        if (elemType == "number") {
+          validForm = validInput(elemValue);
+        }
+        if (elemType == "date") {
+          validForm = validInput(elemValue);
+        }
+        if (elemType == "radio") {
+          validForm = validRadio(elemName);
+        }
+        if (elemType == "email") {
+          if (validInput(elemValue)) {
+            validForm = validEmail(elemValue);
+          }
+          else {
+            validForm = false;
+          }
+        }
+        if (!validForm) {
+          object.focus();
+          alertView(0);
+          return false;
+        }
+        else{
 
-                if (elemType == "text") {
-                    validForm = validInput(elemValue);
-                }
-                if (elemType == "number") {
-                    validForm = validInput(elemValue);
-                }
-                if (elemType == "email") {
-                    if (validInput(elemValue)) {
-                        validForm = validEmail(elemValue);
-                    } else {
-                        validForm = false;
-                    }
-                }
-                if (!validForm) {
-                    object.focus();
-                    alertView(0);
-                    return false;
-                }
-            }
+        }
+      }
             /*
             Author: Diego Casallas
             Update: 12/02/2019 
             */
-            strValues+='"'+elementId+'":"'+elemValue+'",';
+            strValues+='"'+elemId+'":"'+elemValue+'",';
             /*End Update*/
         }
     }
@@ -65,12 +74,19 @@ function getSection(section) {
 };
 // END GETSECTION 
 
-/* VALIDINPUT FUNTION
+/* ENABLEFORM FUNCTION
+Description: Receives the button to enable the next section
+*/
+function enableForm(button){
+let button = "btnSubmit"+button;
+}
+// END ENABLEFORM
+
+/* VALIDINPUT FUNCTION
 Description: Receives the required element and verifies that it is not empty.
 */
 function validInput(element) {
     let validate = true;
-    let 
     if (element.length == 0 || element == null || element == "") {
         validate = false;
     }
@@ -78,7 +94,7 @@ function validInput(element) {
 };
 // END VALIDINPUT
 
-/* VALIDEMAIL FUNTION
+/* VALIDEMAIL FUNCTION
 Description: Receive the required element and verifies that it has the email type structure.
 */
 function validEmail(element) {
@@ -87,7 +103,27 @@ function validEmail(element) {
 };
 // END VALIDEMAIL
 
-/* ALERTVIEW FUNTION
+/* VALIDRADIO FUNCTION
+Description: Receives the radio's name and search if one of the radio is checked in that group's name
+*/
+function validRadio(element) {
+  let elemChecked = document.getElementsByName(element);
+  let check = 0;
+  let validate = false;
+  for (let i = 0; i < elemChecked.length; i++) {
+    if (elemChecked[i].checked) {
+      check++;
+    }
+    if (check > 0) {
+      validate = true;
+      break;
+    }
+  }
+  return validate;
+};
+  // FIN VALIDRADIO
+
+/* ALERTVIEW FUNCTION
 Description: Receive the position of the message that will be displayed.
 */
 function alertView(index) {
@@ -95,7 +131,7 @@ function alertView(index) {
 };
 // FIN ALERTVIEW
 
-/* VIEWMODALITEM FUNTION
+/* VIEWMODALITEM FUNCTION
 Author: Diego Casallas
 Date: 06/02/2019
 Description: Receive the modal that will be visible and the other modal will be invisible.
