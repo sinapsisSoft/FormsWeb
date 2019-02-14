@@ -6,12 +6,12 @@ Date: 05/02/2019
 var arrMessages = ["Revise los campos"];
 var obj;
 var arrObject = new Array();
-var strValues='{';
+var strValues = '{';
 
 /* GETSECTION FUNCTION
 Description: Search all the sections and identify all the inputs that belong to it.
 */
-function getSection(section,button) { 
+function getSection(section, button) {
   let elemSection = document.querySelectorAll('section');
   let elemForms = elemSection[section].querySelectorAll('form');
   let validForm = true;
@@ -39,8 +39,7 @@ function getSection(section,button) {
         if (elemType == "email") {
           if (validInput(elemValue)) {
             validForm = validEmail(elemValue);
-          }
-          else {
+          } else {
             validForm = false;
           }
         }
@@ -48,36 +47,36 @@ function getSection(section,button) {
           object.focus();
           alertView(0);
           return false;
-        }        
-      }
-            /*
-            Author: Diego Casallas
-            Update: 12/02/2019 
-            */
-            strValues+='"'+elemId+'":"'+elemValue+'",';
-            /*End Update*/
         }
+      }
+      /*
+      Author: Diego Casallas
+      Update: 12/02/2019 
+      */
+      strValues += '"' + elemId + '":"' + elemValue + '",';
+      /*End Update*/
     }
-    if (validForm) {
-      enableForm(button);
-    }
-    /*
-    Author: Diego Casallas
-    Update: 12/02/2019 
-    */
-    strValues=strValues.substring(0,strValues.length-1);
-    strValues+='}';
-    obj = JSON.parse(strValues);
-    console.log(obj);
-    /*End Update*/
-    
+  }
+  if (validForm) {
+    enableForm(button);
+  }
+  /*
+  Author: Diego Casallas
+  Update: 12/02/2019 
+  */
+  //strValues=strValues.substring(0,strValues.length-1);
+  //strValues+='}';
+  //obj = JSON.parse(strValues);
+  //console.log(obj);
+  /*End Update*/
+
 };
 // END GETSECTION 
 
 /* ENABLEFORM FUNCTION
 Description: Receives the button to enable the next section
 */
-function enableForm(button) {
+function enableForm(button) { 
   let btn = "btnSubmit" + button;
   let btnEnabled = document.getElementById(btn).disabled = false;
 }
@@ -87,11 +86,11 @@ function enableForm(button) {
 Description: Receives the required element and verifies that it is not empty.
 */
 function validInput(element) {
-    let validate = true;
-    if (element.length == 0 || element == null || element == "") {
-        validate = false;
-    }
-    return validate;
+  let validate = true;
+  if (element.length == 0 || element == null || element == "") {
+    validate = false;
+  }
+  return validate;
 };
 // END VALIDINPUT
 
@@ -99,8 +98,8 @@ function validInput(element) {
 Description: Receive the required element and verifies that it has the email type structure.
 */
 function validEmail(element) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(element);
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(element);
 };
 // END VALIDEMAIL
 
@@ -122,29 +121,13 @@ function validRadio(element) {
   }
   return validate;
 };
-  // FIN VALIDRADIO
+// FIN VALIDRADIO
 
 /* ALERTVIEW FUNCTION
 Description: Receive the position of the message that will be displayed.
 */
 function alertView(index) {
-    alert(arrMessages[index]);
+  alert(arrMessages[index]);
 };
 // FIN ALERTVIEW
 
-/* VIEWMODALITEM FUNCTION
-Author: Diego Casallas
-Date: 06/02/2019
-Description: Receive the modal that will be visible and the other modal will be invisible.
-*/
-function viewModalItem(index) {
-    var id = "panelItem_" + index;
-    var itemClass = document.getElementsByClassName('panelItems');
-    for (var i = 0; i < itemClass.length; i++) {
-        itemClass[i].classList.remove("visible");
-        itemClass[i].classList.add("invisible");
-    }
-    document.getElementById(id).classList.remove("invisible");
-    document.getElementById(id).classList.add("visible");
-};
-// FIN VIEWMODALITEM
