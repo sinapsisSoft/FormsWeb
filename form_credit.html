@@ -10,102 +10,9 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <title>Formulario de Crédito</title>
-  <script type="text/javascript">
-  
-    
-    /* GETDATAITEMS FUNTION
-    Author: Diego Casallas
-    Date: 06/02/2019
-    Description: Validate and add the elements of the modals.
-    */
-    function getDataItems(section){
-		var valueList=new Array();
-		var table;
-		var idForm="#panelItem_"+selectNewItem;
-		var elemens=document.querySelector(idForm);
-		var forms = elemens.querySelectorAll('form');
-		var validate = true;
-		var count=0;
-		var listTable=new Array('tableProperty','tableVehicle','tableBeneficiaries');
-		var table=document.getElementById(listTable[selectNewItem]);
-		listDataTableValue=[];
-    getSection(section); //Pendiente revisar desde aca
-		for(var i=0;i<forms.length;i++){
-			for(var j=0;j<forms[i].length;j++){
-				var elementValue = forms[i][j].value;
-				var elementType = forms[i][j].type
-				var elementsRequire = forms[i][j].required;
-				var element = forms[i][j];
-				var nameElement=element.name;
-				if (elementType == "text" && elementsRequire) {
-					if (elementValue == null || elementValue == "" || elementValue.length == 0) {
-						validate = false;
-						element.classList.add('validateError');
-						break;
 
-					} else {
-						listDataTableValue[count]=elementValue;
-						validate=true;
-						count++;
-						element.classList.remove('validateError');
-					}
-				}else{
-					if(elementType=="text"){
-						listDataTableValue[count]=elementValue;
-						count++;
-					}
-				}
-			if (elementType == "radio" && elementsRequire) {
-			if(validataChecked(nameElement)){
-			if(element.checked){
-			validate=true;
-			listDataTableValue[count]=elementValue;
-			count++;
-			}
-			}else{
-			validate = false;
-			break;
-			}
-			}
-			}
-    }
-
-    if(validate){
-      selectCreateCondition(table,listDataTableValue);    
-      //cleanItem();
-      $('#myModal').modal('hide');
-      }else{
-      alert("Verifique los campos");
-      listDataTableValue=[];
-      } 
-    };
-
-  function selectCreateCondition(table, data) {
-    var newRow;
-    newRow = table.insertRow(table.rows.length);
-    newRow.id = numCellRow;
-
-    if (table.id == "tableProperty") {
-      newRow.className = "dataRowProperty";
-    } else if (table.id == "tableVehicle") {
-      newRow.className = "dataRowVehicle";
-    }
-
-    for (var j = 0; j <= data.length; j++) {
-      var newCell = newRow.insertCell(j);
-      // Append a text node to the cell
-      if (j == data.length) {
-        var newButton = document.createElement('span');
-        newButton.innerHTML = '<button class="btn btn-danger btn-sm" title="Eliminar Item"  onclick="deleteCell(' + numCellRow + ')" >x</button>';
-        newCell.appendChild(newButton);
-        numCellRow++;
-      } else {
-        newCell.appendChild(document.createTextNode(data[j]));
-        }
-      };
-    };
-  </script>
   <script type="text/javascript" src="js/ftValidator.js"></script>
+  <script type="text/javascript" src="js/ftModal.js"></script>
 </head>
 
 <body>
@@ -1768,7 +1675,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-primary" onclick="getDataItems()" >Guardar</button>
             </div>
           </div>
         </div>
