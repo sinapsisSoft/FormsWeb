@@ -17,1018 +17,716 @@
 
 <body>
   <div class="container">
-    <section>
-      <form class="form-inline">
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
+    <section class="row">
+      <form class="form-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-4">
             <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-4">
+              <label class="form-check form-check-inlinecol-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <input class="form-check-input" type="radio" name="radFormType" id="radCredit1" value="option1" required="true">
                 <small class="form-check-label" for="radCredit1">Asociación</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
+              <label class="form-check form-check-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <input class="form-check-input" type="radio" name="radFormType" id="radCredit2" value="option2" required="true">
                 <small class="form-check-label" for="radCredit2">Actualización</small>
               </label>
             </div>
           </div>
-          <div class="form-group col-lg-4">
-            <label for="formDate" class="col-lg-5">Fecha Solicitud</label>
-            <div class="col-lg-5">
-              <input type="date" class="form-control" id="formDate" required="true" required="true">
-            </div>            
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="formDate" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Fecha Solicitud</label>
+              <input type="date" class="form-control col-xs-12 col-sm-6 col-md-6 col-lg-6" id="formDate" required="true" required="true">
           </div>
-          <div class="form-group col-lg-4">
-            <label for="inputState" class="col-lg-5">Ciudad</label>
-            <select id="inputState" class="form-control col-lg-7">
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="inputState" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Ciudad</label>
+            <select id="inputState" class="form-control col-xs-12 col-sm-6 col-md-6 col-lg-6">
               <option selected>Seleccione</option>
             </select>
           </div>
-        </div>
       </form>
     </section>    
     <!-- INFORMACIÓN PARA EL CRÉDITO -->
-    <section>
+    <section class="row">
       <div class="form-row col-lg-12">
         <label class="text-center col-lg-12 font-weight-bold">INFORMACIÓN PARA EL CRÉDITO</label>
       </div>
-      <form id="creditInfo" class="form-inline">
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-4">
+      <form id="creditInfo" class="form-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <div class="form-check-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <input class="form-check-input" type="radio" name="radCreditType" id="radCredit1" value="option1" required="true">
                 <small class="form-check-label" for="radCredit1">Nuevo</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <input class="form-check-input" type="radio" name="radCreditType" id="radCredit2" value="option2" required="true">
                 <small class="form-check-label" for="radCredit2">Novación</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <input class="form-check-input" type="radio" name="radCreditType" id="radCredit3" value="option3" required="true">
                 <small class="form-check-label" for="radCredit3">Modificación</small>
               </label>
             </div>            
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label class="col-form-label">Para Producto de Crédito</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-6">
+          </div>          
+          <div class="form-group form-group col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <label class="col-form-label col-xs-12 col-sm-4 col-md-4 col-lg-6">Para Producto de Crédito</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-7 col-lg-5">
+              <label class="form-check form-check-inline col-xs-6 col-sm-7 col-md-5 col-lg-6">
                 <input class="form-check-input" type="radio" name="radCreditFor" id="radCreditFor1" value="option1" required="true">
                 <small class="form-check-label" for="radCreditFor1">Deudor</small>
               </label>
-              <label class="form-check form-check-inline col-6">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radCreditFor" id="radCreditFor2" value="option2" required="true">
                 <small class="form-check-label" for="radCreditFor2">Codeudor</small>
               </label>
-            </div>            
+            </div>
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="creditAmount">Monto Solicitado</label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="creditAmount" maxlength="11" placeholder="0.00" min="1"
-                  aria-describedby="inputGroupPrepend" required="true">
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="creditAmount" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Monto Solicitado</label>
+            <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">$</span>
               </div>
+              <input type="number" class="form-control" id="creditAmount" maxlength="11" placeholder="0.00" min="1"
+                aria-describedby="inputGroupPrepend" required="true">
             </div>
-          </div>          
-        </div>
-        <hr />
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label>Línea crédito</label>
-            </div>
-            <div class="form-group col-lg-9">
-              <select id="creditLine" class="form-control col-lg-12">
+          </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+              <label class="col-xs-12 col-sm-4 col-md-6 col-lg-4">Línea crédito</label>
+              <select id="creditLine" class="form-control col-xs-12 col-sm-8 col-md-6 col-lg-8">
                 <option selected>Seleccione</option>
               </select>
-            </div>
           </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-5">
-              <label>Recoge</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-6">
+          <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-3">
+            <label class="col-form-label col-xs-12 col-sm-4 col-md-4 col-lg-6">Recoge</label>
+            <div class="form-check-inline  col-xs-12 col-sm-7 col-md-7 col-lg-5">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radCreditPick" id="radCreditPick1" value="option1" required="true">
                 <small class="form-check-label" for="radCreditPick1">Si</small>
               </label>
-              <label class="form-check form-check-inline col-lg-6">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radCreditPick" id="radCreditPick2" value="option2" required="true">
                 <small class="form-check-label" for="radCreditPick2">No</small>
               </label>
             </div>
           </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-5">
-              <label for="creditTerm">Plazo <small id="creditTermMonths" class="text-muted"> (en meses) </small></label>              
-            </div>
-            <select id="creditTerm" class="form-control col-lg-7">
+          <div class="form-group col-xs-12 col-sm-12 col-md-5 col-lg-3">
+            <label for="creditTerm" class="col-xs-12 col-sm-4 col-md-6 col-lg-4">Plazo <small id="creditTermMonths" class="text-muted">
+                (en meses) </small></label>
+            <select id="creditTerm" class="form-control col-xs-12 col-sm-6 col-md-6 col-lg-8">
               <option selected>Seleccione</option>
             </select>
           </div>
-          <div class="form-group col-lg-2">
+          <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-2">
             <button type="button" id="btnSubmit1" onclick="getSection(1,2)" title="Continuar" class="btn btn-success btn-lg">Continuar</button>
           </div>
-        </div>
       </form>
     </section>
     <!-- FIN INFORMACIÓN PARA EL CRÉDITO -->
 
     <!-- INFORMACIÓN BÁSICA SOLICITANTE -->
-    <section>
+    <section class="row">
       <div class="form-row col-lg-12">
         <label class="text-center col-lg-12 font-weight-bold">INFORMACIÓN BÁSICA SOLICITANTE</label>
       </div>
-      <form id="ApplicantInfo" class="form-inline">
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="ApplicSurname1">1er Apellido </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="ApplicSurname1" required="true">
-            </div>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="ApplicSurname2">2do Apellido </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="ApplicSurname2" >
-            </div>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="ApplicName1">1er Nombre </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="ApplicName1" required="true">
-            </div>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="ApplicName2">2do Nombre </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="ApplicName2" >
-            </div>
+      <form id="ApplicantInfo" class="form-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+          <label for="ApplicSurname1" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">1er Apellido </label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="ApplicSurname1" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+          <label for="ApplicSurname2" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">2do Apellido </label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="ApplicSurname2">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+          <label for="ApplicName1" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">1er Nombre </label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id=" ApplicName1" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+          <label for="ApplicName2" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">2do Nombre </label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="ApplicName2">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <label class="col-xs-12 col-sm-4 col-md-4 col-lg-5">Tipo de Documento</label>
+          <div class="form-check-inline col-xs-12 col-sm-7 col-md-5 col-lg-6">
+            <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <input class="form-check-input" type="radio" name="radApplicTypeDoc" id="radApplicTypeDoc1" value="option1"
+                required="true">
+              <small class="form-check-label" for="radApplicTypeDoc1">C.C.</small>
+            </label>
+            <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <input class="form-check-input" type="radio" name="radApplicTypeDoc" id="radApplicTypeDoc2" value="option2"
+                required="true">
+              <small class="form-check-label" for="radApplicTypeDoc2">C.E.</small>
+            </label>
           </div>
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-6">
-              <label>Tipo de Documento</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicTypeDoc" id="radApplicTypeDoc1" value="option1" required="true">
-                <small class="form-check-label" for="radApplicTypeDoc1">C.C.</small>
-              </label>
-              <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicTypeDoc" id="radApplicTypeDoc2" value="option2" required="true">
-                <small class="form-check-label" for="radApplicTypeDoc2">C.E.</small>
-              </label>
-            </div>            
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="ApplicId">Identificación No. </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="number" class="form-control col-lg-12" id="ApplicId" min="0" required="true" >
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="ApplicExped">Fecha de Expedición</label>
-            </div>            
-            <div class="col-lg-7">
-              <input type="date" class="form-control col-lg-12" id="ApplicExped" min="1930-01-01" required="true" >
-            </div>
-          </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="ApplicId" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Identificación No. </label>
+          <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="ApplicId" min="0" required="true">
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="ApplicBornDate">Fecha de Nacimiento</label>
-            </div>
-            <div class="col-lg-7">
-              <input type="date" class="form-control col-lg-12" id="ApplicBornDate" min="1930-01-01" required="true">
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="ApplicExpPlace">Lugar de Expedición </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="ApplicExpPlace" required="true">
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="ApplicBornCity">Ciudad de Nacimiento </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="ApplicBornCity" required="true">
-            </div>
-          </div>          
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="ApplicExped" class="col-xs-12 col-sm-4 col-md-5 col-lg-5">Fecha de Expedición</label>
+          <input type="date" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-7" id="ApplicExped" min="1930-01-01" required="true">
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="ApplicBornDepart">Departamento </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="ApplicBornDepart" required="true">
-            </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="ApplicBornDate" class="col-xs-12 col-sm-4 col-md-5 col-lg-5">Fecha de Nacimiento</label>
+          <input type="date" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-7" id="ApplicBornDate" min="1930-01-01"
+            required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="ApplicExpPlace" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Lugar de Expedición </label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="ApplicExpPlace" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="ApplicBornCity" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Ciudad de Nacimiento </label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="ApplicBornCity" required="true">
+        </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+              <label for="ApplicBornDepart" class="col-xs-12 col-sm-4 col-md-5 col-lg-5">Departamento </label>
+              <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-7" id="ApplicBornDepart" required="true">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="ApplicBornCountry">País de Nacimiento </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="ApplicBornCountry" required="true">
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+              <label for="ApplicBornCountry" class="col-xs-12 col-sm-4 col-md-5 col-lg-5">País de Nacimiento </label>
+              <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-7" id="ApplicBornCountry" required="true">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-6">
-              <label> Sexo</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicGender" id="radApplicGender1" value="option1" required="true">
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+              <label class="col-xs-12 col-sm-4 col-md-4 col-lg-5">Sexo</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-5 col-lg-6">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <input class="form-check-input" type="radio" name="radApplicGender" id="radApplicGender1" value="option1"
+                  required="true">
                 <small class="form-check-label" for="radApplicGender1">M</small>
               </label>
-              <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicGender" id="radApplicGender2" value="option2" required="true">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <input class="form-check-input" type="radio" name="radApplicGender" id="radApplicGender2" value="option2"
+                  required="true">
                 <small class="form-check-label" for="radApplicGender2">F</small>
               </label>
-            </div>            
-          </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-8">
-            <div class="col-lg-2">
-              <label> Estado Civil</label>
             </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus1" value="option1" required="true">
+          </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-8">
+              <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3"> Estado Civil</label>
+            <div class="form-check-inline col-xs-12 col-sm-8 col-md-8 col-lg-8">
+              <label class="form-check form-check-inline col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus1" value="option1"
+                  required="true">
                 <small class="form-check-label" for="radApplicStatus1">Soltero</small>
               </label>
-              <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus2" value="option2" required="true">
+              <label class="form-check form-check-inline col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus2" value="option2"
+                  required="true">
                 <small class="form-check-label" for="radApplicStatus2">Separado</small>
               </label>
-              <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus3" value="option3" required="true">
+              <label class="form-check form-check-inline col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus3" value="option3"
+                  required="true">
                 <small class="form-check-label" for="radApplicStatus3">Casado</small>
               </label>
-              <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus4" value="option4" required="true">
+              <label class="form-check form-check-inline col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus4" value="option4"
+                  required="true">
                 <small class="form-check-label" for="radApplicStatus4">Unión Libre</small>
               </label>
-              <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus5" value="option5" required="true">
+              <label class="form-check form-check-inline col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus5" value="option5"
+                  required="true">
                 <small class="form-check-label" for="radApplicStatus5">Divorciado</small>
               </label>
-              <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus6" value="option6" required="true">
+              <label class="form-check form-check-inline col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <input class="form-check-input" type="radio" name="radApplicStatus" id="radApplicStatus6" value="option6"
+                  required="true">
                 <small class="form-check-label" for="radApplicStatus6">Viudo</small>
               </label>
-            </div>            
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="ApplicDependents">Personas a Cargo </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="number" class="form-control col-lg-12" min="0" id="ApplicDependents" required="true">
             </div>
           </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="ApplicProfession">Profesión </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="ApplicProfession" >
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+              <label for="ApplicDependents" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Personas a Cargo </label>
+              <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" min="0" id="ApplicDependents" required="true">
           </div>
-          <div class="form-group col-lg-9">
-            <div class="col-lg-2">
-              <label> Nivel de Educación</label>
-            </div>
-            <div class="form-check-inline">
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+              <label for="ApplicProfession" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Profesión </label>
+              <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="ApplicProfession">
+          </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-9">
+              <label class="col-xs-12 col-sm-3 col-md-2 col-lg-3"> Nivel de Educación</label>
+            <div class="form-check-inline col-xs-12 col-sm-8 col-md-9 col-lg-8">
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca1" value="option1" required="true">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca1" value="option1"
+                  required="true">
                 <small class="form-check-label" for="radApplicEduca1">Primaria</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca2" value="option2" required="true">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca2" value="option2"
+                  required="true">
                 <small class="form-check-label" for="radApplicEduca2">Secundaria</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca3" value="option3" required="true">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca3" value="option3"
+                  required="true">
                 <small class="form-check-label" for="radApplicEduca3">Universitario</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca4" value="option4" required="true">
-                <small class="form-check-label" for="radApplicEduca4">Técnico/Tecnólogo</small>
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca4" value="option4"
+                  required="true">
+                <small class="form-check-label" for="radApplicEduca4">Técnico/ Tecnólogo</small>
               </label>
               <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca5" value="option5" required="true">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca5" value="option5"
+                  required="true">
                 <small class="form-check-label" for="radApplicEduca5">Postgrado</small>
               </label>
-              <label class="form-check form-check-inline col-lg-1">
-                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca6" value="option6" required="true">
+              <label class="form-check form-check-inline col-lg-2">
+                <input class="form-check-input" type="radio" name="radApplicEduca" id="radApplicEduca6" value="option6"
+                  required="true">
                 <small class="form-check-label" for="radApplicEduca6">Ninguno</small>
               </label>
             </div>
           </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-5">
-            <div class="col-lg-3">
-              <label> Tipo de Vivienda</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType1" value="option1" required="true">
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-5">
+              <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> Tipo de Vivienda</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-7 col-lg-7">
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType1" value="option1"
+                  required="true">
                 <small class="form-check-label" for="radApplicHomeType1">Propia</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType2" value="option2" required="true">
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType2" value="option2"
+                  required="true">
                 <small class="form-check-label" for="radApplicHomeType2">Arrendada</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType3" value="option3" required="true">
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <input class="form-check-input" type="radio" name="radApplicHomeType" id="radApplicHomeType3" value="option3"
+                  required="true">
                 <small class="form-check-label" for="radApplicHomeType3">Familiar</small>
               </label>
             </div>
           </div>
-          <div class="form-group col-lg-7">
-            <div class="col-lg-4">
-              <label for="ApplicHomeDir">Dirección de Residencia</label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <input type="text" class="form-control" id="ApplicHomeDir" required="true">
-              </div>
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-7">
+            <label for="ApplicHomeDir" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Dirección de Residencia</label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="ApplicHomeDir" required="true">
           </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label for="ApplicPhone">Teléfono Residencia </label>
-            </div>
-            <div class="col-lg-9">
-              <input type="number" class="form-control col-lg-12" id="ApplicPhone" >
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="ApplicPhone" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Teléfono Residencia </label>
+            <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="ApplicPhone">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label for="ApplicCellphone">Teléfono Móvil </label>
-            </div>
-            <div class="col-lg-9">
-              <input type="number" class="form-control col-lg-12" id="ApplicCellphone" required="true" >
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="ApplicCellphone" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Teléfono Móvil </label>
+            <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="ApplicCellphone" required="true">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label>Departamento</label>
-            </div>
-            <div class="form-group col-lg-9">
-              <select id="ApplicDepart" class="form-control col-lg-12">
-                <option selected>Seleccione</option>
-              </select>
-            </div>
-          </div>          
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label>Ciudad/ Municipio</label>
-            </div>
-            <div class="form-group col-lg-9">
-              <select id="ApplicCity" class="form-control col-lg-12">
-                <option selected>Seleccione</option>
-              </select>
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Departamento</label>
+            <select id="ApplicDepart" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8">
+              <option selected>Seleccione</option>
+            </select>
           </div>
-          <div class="form-group col-lg-8">
-            <div class="col-lg-3">
-              <label> Envío Correspondencia</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend1" value="option1" required="true">
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Ciudad/ Municipio</label>
+            <select id="ApplicCity" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8">
+              <option selected>Seleccione</option>
+            </select>
+          </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-8">
+              <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> Envío Correspondencia</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-7 col-lg-7">
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend1" value="option1"
+                  required="true">
                 <small class="form-check-label" for="radApplicSend1">E-mail Personal</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
-                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend2" value="option2" required="true">
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend2" value="option2"
+                  required="true">
                 <small class="form-check-label" for="radApplicSend2">E-mail Laboral</small>
               </label>
-              <label class="form-check form-check-inline col-lg-5">
-                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend3" value="option3" required="true">
+              <label class="form-check form-check-inline  col-xs-4 col-sm-4 col-md-5 col-lg-5">
+                <input class="form-check-input" type="radio" name="radApplicSend" id="radApplicSend3" value="option3"
+                  required="true">
                 <small class="form-check-label" for="radApplicSend3">Dirección Residencia</small>
               </label>
             </div>
           </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label> Vía Celular</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicSendCell" id="radApplicSendCell1" value="option1" required="true">
+          <div class="form-group  col-xs-12 col-sm-12 col-md-12 col-lg-3">
+              <label class="col-xs-12 col-sm-4 col-md-4 col-lg-5"> Vía Celular</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-5 col-lg-6">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <input class="form-check-input" type="radio" name="radApplicSendCell" id="radApplicSendCell1" value="option1"
+                  required="true">
                 <small class="form-check-label" for="radApplicSendCell1">Si</small>
               </label>
-              <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radApplicSendCell" id="radApplicSendCell2" value="option2" required="true">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <input class="form-check-input" type="radio" name="radApplicSendCell" id="radApplicSendCell2" value="option2"
+                  required="true">
                 <small class="form-check-label" for="radApplicSendCell2">No</small>
               </label>
             </div>
           </div>
-          <div class="form-group col-lg-7">
-            <div class="col-lg-4">
-              <label for="ApplicPersonalEmail">E-mail Personal</label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">@</span>
-                </div>
-                <input type="email" class="form-control" id="ApplicPersonalEmail" aria-describedby="inputGroupPrepend" required="true">
+          <div class="form-group col-xs-12 col-sm-12 col-md-9 col-lg-7">
+            <label for="ApplicPersonalEmail" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">E-mail Personal</label>
+            <div class="input-group col-xs-12 col-sm-8 col-md-8 col-lg-8">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
               </div>
+              <input type="email" class="form-control" id="ApplicPersonalEmail" aria-describedby="inputGroupPrepend" required="true">
             </div>
           </div>
-          <div class="form-group col-lg-2">
+          <div class="form-group col-xs-2 col-sm-2 col-md-3 col-lg-2">
             <button type="button" id="btnSubmit2" onclick="getSection(2,3)" class="btn btn-success btn-lg" disabled>Continuar</button>
           </div>
-        </div>
       </form>
     </section>
     <!-- FIN INFORMACIÓN BÁSICA SOLICITANTE -->
     <!-- INFORMACIÓN LABORAL -->
-    <section>
-      <div class="form-row col-lg-12">
+    <section class="row">
+      <div class="form-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <label class="text-center col-lg-12 font-weight-bold">INFORMACIÓN LABORAL (Diligencia esta información si es empleado)</label>
       </div>
-      <form id="WorkInfo" class="form-inline">
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="WorkName">Nombre Empresa/ Negocio </label>
-            </div>
-            <div class="col-lg-7">
-              <input type="text" class="form-control col-lg-12" id="WorkName" required="true">
-            </div>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-5">
-              <label for="WorkPhone">Teléfono </label>
-            </div>
-            <div class="col-lg-7">
-              <input type="number" class="form-control col-lg-12" id="WorkPhone" required="true">
-            </div>
-          </div>
-          <div class="form-group col-lg-2">
-            <div class="col-lg-5">
-              <label for="WorkExt">Ext. </label>
-            </div>
-            <div class="col-lg-7">
-              <input type="number" class="form-control col-lg-12" id="WorkExt" >
-            </div>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-5">
-              <label for="WorkFax">Fax </label>
-            </div>
-            <div class="col-lg-7">
-              <input type="number" class="form-control col-lg-12" id="WorkFax" >
-            </div>
+      <form id="WorkInfo" class="form-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="WorkName" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Nombre Empresa/ Negocio </label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="WorkName" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+          <label for="WorkPhone" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Teléfono </label>
+          <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="WorkPhone" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-2">
+          <label for="WorkExt" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Ext. </label>
+          <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="WorkExt">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+          <label for="WorkFax" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Fax </label>
+          <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="WorkFax">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Departamento</label>
+          <select id="WorkDepart" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <option selected>Seleccione</option>
+          </select>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+          <label class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Ciudad/ Municipio</label>
+          <select id="WorkCity" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <option selected>Seleccione</option>
+          </select>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-5">
+          <label for="WorkDir" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Dirección Empresa/ Oficina</label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="WorkDir" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="WorkAdmission" class="col-xs-12 col-sm-4 col-md-5 col-lg-5">Fecha de Ingreso</label>
+          <input type="date" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-7" id="WorkAdmission" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="WorkGrade" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Grado </label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="WorkGrade">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="WorkTitle" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Cargo </label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="WorkTitle">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3">
+          <label class="col-xs-12 col-sm-4 col-md-4 col-lg-5"> Funcionario Público</label>
+          <div class="form-check-inline col-xs-12 col-sm-7 col-md-5 col-lg-6">
+            <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <input class="form-check-input" type="radio" name="radWorkOfficial" id="radWorkOfficial1" value="option1"
+                required="true">
+              <small class="form-check-label" for="radWorkOfficial1">Si</small>
+            </label>
+            <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <input class="form-check-input" type="radio" name="radWorkOfficial" id="radWorkOfficial2" value="option2"
+                required="true">
+              <small class="form-check-label" for="radWorkOfficial2">No</small>
+            </label>
           </div>
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label>Departamento</label>
-            </div>
-            <div class="form-group col-lg-8">
-              <select id="WorkDepart" class="form-control col-lg-12">
-                <option selected>Seleccione</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-3">
-              <label>Ciudad/ Municipio</label>
-            </div>
-            <div class="form-group col-lg-9">
-              <select id="WorkCity" class="form-control col-lg-12">
-                <option selected>Seleccione</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group col-lg-5">
-            <div class="col-lg-5">
-              <label for="WorkDir">Dirección Empresa/ Oficina</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <input type="text" class="form-control" id="WorkDir" required="true">
-              </div>
-            </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-9">
+          <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3"> Vinculación</label>
+          <div class="form-check-inline col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <label class="form-check form-check-inline col-xs-2 col-sm-2 col-md-2 col-lg-3">
+              <input class="form-check-input" type="radio" name="radWorklink" id="radWorklink1" value="option1">
+              <small class="form-check-label" for="radWorklink1">De Carrera</small>
+            </label>
+            <label class="form-check form-check-inline col-xs-2 col-sm-4 col-md-2 col-lg-2">
+              <input class="form-check-input" type="radio" name="radWorklink" id="radWorklink2" value="option2">
+              <small class="form-check-label" for="radWorklink2">Provisional</small>
+            </label>
+            <label class="form-check form-check-inline col-xs-3 col-sm-3 col-md-3 col-lg-2">
+              <input class="form-check-input" type="radio" name="radWorklink" id="radWorklink3" value="option3">
+              <small class="form-check-label" for="radWorklink3">Independientes</small>
+            </label>
+            <label class="form-check form-check-inline col-xs-3 col-sm-4 col-md-3 col-lg-2">
+              <input class="form-check-input" type="radio" name="radWorklink" id="radWorklink4" value="option4">
+              <small class="form-check-label" for="radWorklink4">Pensionados</small>
+            </label>
+            <label class="form-check form-check-inline col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <input class="form-check-input" type="radio" name="radWorklink" id="radWorklink5" value="option5">
+              <small class="form-check-label" for="radWorklink5">Libre Nombramiento y Remoción</small>
+            </label>
           </div>
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="WorkAdmission">Fecha de Ingreso</label>
-            </div>
-            <div class="col-lg-8">
-              <input type="date" class="form-control col-lg-12" id="WorkAdmission" required="true">
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="WorkGrade">Grado </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="WorkGrade" >
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="WorkTitle">Cargo </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="WorkTitle" >
-            </div>
-          </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-3">
-            <div class="col-lg-5">
-              <label> Funcionario Público</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radWorkOfficial" id="radWorkOfficial1" value="option1" required="true">
-                <small class="form-check-label" for="radWorkOfficial1">Si</small>
-              </label>
-              <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radWorkOfficial" id="radWorkOfficial2" value="option2" required="true">
-                <small class="form-check-label" for="radWorkOfficial2">No</small>
-              </label>
-            </div>
-          </div>
-          <div class="form-group col-lg-9">
-            <div class="col-lg-1">
-              <label> Vinculación</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-3">
-                <input class="form-check-input" type="radio" name="radWorklink" id="radWorklink1" value="option1">
-                <small class="form-check-label" for="radWorklink1">De Carrera</small>
-              </label>
-              <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radWorklink" id="radWorklink2" value="option2">
-                <small class="form-check-label" for="radWorklink2">Provisional</small>
-              </label>
-              <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radWorklink" id="radWorklink3" value="option3">
-                <small class="form-check-label" for="radWorklink3">Independientes</small>
-              </label>
-              <label class="form-check form-check-inline col-lg-2">
-                <input class="form-check-input" type="radio" name="radWorklink" id="radWorklink4" value="option4">
-                <small class="form-check-label" for="radWorklink4">Pensionados</small>
-              </label>              
-              <label class="form-check form-check-inline col-lg-3">
-                  <input class="form-check-input" type="radio" name="radWorklink" id="radWorklink5" value="option5">
-                  <small class="form-check-label" for="radWorklink5">Libre Nombramiento y Remoción</small>
-                </label>
-            </div>
-          </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-5">
-            <div class="col-lg-7">
-              <label> Administra Recursos Públicos</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-6">
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-5">
+              <label class="col-xs-12 col-sm-4 col-md-5 col-lg-6"> Administra Recursos Públicos</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-6 col-lg-5">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radWorkResource" id="radWorkResource1" value="option1" required="true">
                 <small class="form-check-label" for="radWorkResource1">Si</small>
               </label>
-              <label class="form-check form-check-inline col-lg-6">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radWorkResource" id="radWorkResource2" value="option2" required="true">
                 <small class="form-check-label" for="radWorkResource2">No</small>
               </label>
             </div>
           </div>
-          <div class="form-group col-lg-5">
-            <div class="col-lg-7">
-              <label> Persona Públicamente Expuesta</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-6">
+          <div class="form-group col-sm-12 col-md-12 col-lg-5">
+              <label class="col-xs-12 col-sm-4 col-md-5 col-lg-6"> Persona Públicamente Expuesta</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-6 col-lg-5">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radWorkExposed" id="radWorkExposed1" value="option1" required="true">
                 <small class="form-check-label" for="radWorkExposed1">Si</small>
               </label>
-              <label class="form-check form-check-inline col-lg-6">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radWorkExposed" id="radWorkExposed2" value="option2" required="true">
                 <small class="form-check-label" for="radWorkExposed2">No</small>
               </label>
             </div>
           </div>
-          <div class="form-group col-lg-2">
+          <div class="form-group col-xs-2 col-sm-2 col-md-3 col-lg-2">
             <button type="button" id="btnSubmit3" onclick="getSection(3,4)" class="btn btn-success btn-lg" disabled>Continuar</button>
           </div>
-        </div>
       </form>
     </section>     
     <!-- FIN INFORMACIÓN LABORAL      -->
     <!-- INFORMACIÓN FINANCIERA SOLICITANTE-->
-    <section>
-      <div class="form-row col-lg-12">
+    <section class="row">
+      <div class="form-row col-xs-12 col-sm-12 col-md-12">
         <label class="text-center col-lg-12 font-weight-bold">INFORMACIÓN FINANCIERA SOLICITANTE</label>
       </div>
-      <form id="FinanInfo" class="form-inline">
-        <div class="col-lg-4">
-          <label>INGRESOS MENSUALES <small id="FinanMonthIncome" class="text-muted"> (Cifras en pesos)</small></label>          
+      <form id="FinanInfo" class="form-inline col-xs-12 col-sm-12 col-md-12">
+        <div class="form-row col-lg-12">
+          <label>INGRESOS MENSUALES <small id="FinanMonthIncome" class="text-muted"> (Cifras en pesos)</small></label>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanSalary" class="col-xs-12 col-sm-4 col-md-5 col-lg-4"> Sueldo/Pensión</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
+            </div>
+            <input type="number" class="form-control" id="FinanSalary" min="0" maxlength="11" placeholder="0.00"
+              aria-describedby="inputGroupPrepend" required="true">
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="FinanIncome" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Otros Ingresos</label>
+            <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">$</span>
+              </div>
+              <input type="number" class="form-control" id="FinanIncome" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
+            </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-4">
+          <label for="FinanDesc" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Descripción Otros Ingresos</label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="FinanDesc">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanOther" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Otros Ingresos Nómina</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
+            </div>
+            <input type="number" class="form-control" id="FinanOther" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanTotalIncome" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Total Ingresos Mensuales</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
+            </div>
+            <input type="number" class="form-control" id="FinanTotalIncome" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
+              disabled>
+          </div>
         </div>
         <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanSalary">Sueldo/Pensión</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanSalary" min="0" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                required="true">
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanIncome">Otros Ingresos</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanIncome" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanDesc">Descripción Otros Ingresos</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <input type="text" class="form-control" id="FinanDesc" >
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanOther">Otros Ingresos Nómina</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanOther" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanTotalIncome">Total Ingresos Mensuales</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanTotalIncome" maxlength="11" placeholder="0.00"
-                  aria-describedby="inputGroupPrepend" disabled>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
           <label>EGRESOS MENSUALES <small id="FinanMonthExpen" class="text-muted"> (Cifras en pesos)</small></label>
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanPayDisc">Descuento Por Nómina</label>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanPayDisc" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Descuento Por Nómina</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
             </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanPayDisc" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
-            </div>
+            <input type="number" class="form-control" id="FinanPayDisc" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanSusten">Gastos Sostenimiento</label>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanSusten" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Gastos Sostenimiento</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
             </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanSusten" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
-            </div>
+            <input type="number" class="form-control" id="FinanSusten" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanLease">Arrendamiento</label>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanLease" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Arrendamiento</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
             </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanLease" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
+            <input type="number" class="form-control" id="FinanLease" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanExpenses" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Gastos Financieros</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
             </div>
+            <input type="number" class="form-control" id="FinanExpenses" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanOtherExp" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Otros Egresos</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
+            </div>
+            <input type="number" class="form-control" id="FinanOtherExp" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanTotalExp" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Total Egresos Mensuales</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
+            </div>
+            <input type="number" class="form-control" id="FinanTotalExp" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
+              disabled>
           </div>
         </div>
         <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanExpenses">Gastos Financieros</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanExpenses" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanOtherExp">Otros Egresos</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanOtherExp" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanTotalExp">Total Egresos Mensuales</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanTotalExp" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  disabled>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
           <label>ACTIVOS<small id="FinanMonthAssets" class="text-muted"> (Cifras en pesos)</small></label>
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanRealty">Bienes Raíces</label>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanRealty" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Bienes Raíces</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
             </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanRealty" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanOtherAsse">Otros Activos</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanOtherAsse" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanTotalAsset">Total Activos</label>
-            </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="FinanTotalAsset">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanTotalIncome" maxlength="11" placeholder="0.00"
-                  aria-describedby="inputGroupPrepend" disabled>
-              </div>
-            </div>
+            <input type="number" class="form-control" id="FinanRealty" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanOtherAsse" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Otros Activos</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
+            </div>
+            <input type="number" class="form-control" id="FinanOtherAsse" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="FinanTotalAsset" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Total Activos</label>
+            <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="FinanTotalAsset">$</span>
+              </div>
+              <input type="number" class="form-control" id="FinanTotalIncome" maxlength="11" placeholder="0.00"
+                aria-describedby="inputGroupPrepend" disabled>
+            </div>
+        </div>
+        <div class=" form-row col-lg-12">
           <label>PASIVOS<small id="FinanMonthLiab" class="text-muted"> (Cifras en pesos)</small></label>
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanEntities">Deudas Entidades Financieras</label>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanEntities" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Deudas Entidades Financieras</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
             </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanEntities" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
-            </div>
+            <input type="number" class="form-control" id="FinanEntities" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanOtherLiab">Otros Pasivos</label>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanOtherLiab" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Otros Pasivos</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
             </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanOtherLiab" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
-              </div>
-            </div>
+            <input type="number" class="form-control" id="FinanOtherLiab" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-5">
-              <label for="FinanTotalLiab">Total Pasivos</label>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="FinanTotalLiab" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Total Pasivos</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-8">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="FinanTotalAsset">$</span>
             </div>
-            <div class="col-lg-7">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="FinanTotalAsset">$</span>
-                </div>
-                <input type="number" class="form-control" id="FinanTotalLiab" maxlength="11" placeholder="0.00"
-                  aria-describedby="inputGroupPrepend" disabled>
-              </div>
-            </div>
+            <input type="number" class="form-control" id="FinanTotalLiab" maxlength="11" placeholder="0.00" aria-describedby="inputGroupPrepend"
+              disabled>
           </div>
-          <div class="form-group col-lg-2">
-            <button type="button" id="btnSubmit4" onclick="getSection(4,5)" class="btn btn-success btn-lg" disabled>Continuar</button>
-          </div>
+        </div>
+        <div class="form-group col-xs-2 col-sm-2 col-md-3 col-lg-2">
+          <button type="button" id="btnSubmit4" onclick="getSection(4,5)" class="btn btn-success btn-lg" disabled>Continuar</button>
         </div>
       </form>
     </section>
     <!-- FIN INFORMACIÓN SOLICITANTE -->
     <!-- DATOS CÓNYUGUE O COMPAÑER@ PERMANENTE SOLICITANTE -->
-    <section>
+    <section class="row">
       <div class="form-row col-lg-12">
         <label class="text-center col-lg-12 font-weight-bold">DATOS CÓNYUGUE O COMPAÑERO(A) PERMANENTE SOLICITANTE</label>
       </div>
-      <form id="SpouseInfo" class="form-inline">
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="SpouseSurname1">1er Apellido </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="SpouseSurname1" >
-            </div>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="SpouseSurname2">2do Apellido </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="SpouseSurname2" >
-            </div>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="SpouseName1">1er Nombre </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="SpouseName1" >
-            </div>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="SpouseName2">2do Nombre </label>
-            </div>
-            <div class="col-lg-8">
-              <input type="text" class="form-control col-lg-12" id="SpouseName2" >
-            </div>
+      <form id="SpouseInfo" class="form-inline col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+            <label for="SpouseSurname1" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">1er Apellido </label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="SpouseSurname1">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+            <label for="SpouseSurname2" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">2do Apellido </label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="SpouseSurname2">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+            <label for="SpouseName1" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">1er Nombre </label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="SpouseName1">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+            <label for="SpouseName2" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">2do Nombre </label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="SpouseName2">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-6">
+          <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Tipo de Documento</label>
+          <div class="form-check-inline col-xs-12 col-sm-7 col-md-7 col-lg-7">
+            <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <input class="form-check-input" type="radio" name="radSpouseTypeDoc" id="radSpouseTypeDoc1" value="option1">
+              <small class="form-check-label" for="radSpouseTypeDoc1">C.C.</small>
+            </label>
+            <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <input class="form-check-input" type="radio" name="radSpouseTypeDoc" id="radSpouseTypeDoc2" value="option2">
+              <small class="form-check-label" for="radSpouseTypeDoc2">C.E.</small>
+            </label>
+            <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <input class="form-check-input" type="radio" name="radSpouseTypeDoc" id="radSpouseTypeDoc3" value="option3">
+              <small class="form-check-label" for="radSpouseTypeDoc3">P.</small>
+            </label>
           </div>
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-6">
-            <div class="col-lg-4">
-              <label>Tipo de Documento</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-5">
-                <input class="form-check-input" type="radio" name="radSpouseTypeDoc" id="radSpouseTypeDoc1" value="option1">
-                <small class="form-check-label" for="radSpouseTypeDoc1">C.C.</small>
-              </label>
-              <label class="form-check form-check-inline col-lg-5">
-                <input class="form-check-input" type="radio" name="radSpouseTypeDoc" id="radSpouseTypeDoc2" value="option2">
-                <small class="form-check-label" for="radSpouseTypeDoc2">C.E.</small>
-              </label>
-              <label class="form-check form-check-inline col-lg-5">
-                <input class="form-check-input" type="radio" name="radSpouseTypeDoc" id="radSpouseTypeDoc3" value="option3">
-                <small class="form-check-label" for="radSpouseTypeDoc3">P.</small>
-              </label>
-            </div>
-          </div>
-          <div class="form-group col-lg-6">
-            <div class="col-lg-4">
-              <label for="SpouseId">Identificación No.</label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <input type="number" class="form-control" id="SpouseId">
-              </div>
-            </div>
-          </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <label for="SpouseId" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Identificación No.</label>
+          <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="SpouseId">
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-5">
-            <div class="col-lg-4">
-              <label for="SpouseWork">Empresa Donde Trabaja/Ocupación</label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <input type="text" class="form-control" id="SpouseWork" >
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-5">
-            <div class="col-lg-4">
-              <label for="SpouseCellPhone">Número Celular</label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <input type="number" class="form-control" id="SpouseCellPhone" >
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-2">
-            <button type="button" id="btnSubmit5" onclick="getSection(5,6)" class="btn btn-success btn-lg" disabled>Continuar</button>
-          </div>
-        </div>        
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-5">
+          <label for="SpouseWork" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Empresa Donde Trabaja/Ocupación</label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="SpouseWork">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-5">
+          <label for="SpouseCellPhone" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Número Celular</label>
+          <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="SpouseCellPhone">
+        </div>
+        <div class="form-group col-xs-2 col-sm-2 col-md-3 col-lg-2">
+          <button type="button" id="btnSubmit5" onclick="getSection(5,6)" class="btn btn-success btn-lg" disabled>Continuar</button>
+        </div>
       </form>
     </section>
     <!-- FIN DATOS CÓNYUGUE O COMPAÑER@ PERMANENTE SOLICITANTE -->
@@ -1087,413 +785,247 @@
     </section>
     <!-- FIN VEHÍCULOS -->
     <!-- OPERACIONES INTERNACIONALES -->
-    <section>
+    <section class="row">
       <div class="form-row col-lg-12">
         <label class="text-center col-lg-12 font-weight-bold">OPERACIONES INTERNACIONALES</label>
       </div>
-      <form id="InternaOper" class="form-inline">
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-7">
-              <label>Realiza Transacciones en Moneda Extranjera</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-6">
+      <form id="InternaOper" class="form-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-4">
+              <label class="col-xs-12 col-sm-4 col-md-7 col-lg-6">Realiza Transacciones en Moneda Extranjera</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-4 col-lg-5">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radIntMoney" id="radIntMoney1" value="option1" required="true">
                 <small class="form-check-label" for="radIntMoney1">Si</small>
               </label>
-              <label class="form-check form-check-inline col-lg-6">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radIntMoney" id="radIntMoney2" value="option2" required="true">
                 <small class="form-check-label" for="radIntMoney2">No</small>
               </label>
             </div>
           </div>
-          <div class="form-group col-lg-8">
-            <div class="col-lg-2">
-              <label>Tipo de Transacción</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-4">
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-8">
+              <label class="col-xs-12 col-sm-4 col-md-3 col-lg-3">Tipo de Transacción</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-8 col-lg-8">
+              <label class="form-check form-check-inline col-xs-2 col-sm-4 col-md-3 col-lg-3">
                 <input class="form-check-input" type="radio" name="radIntTransac" id="radIntTransac1" value="option1">
                 <small class="form-check-label" for="radIntTransac1">Importaciones</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
+              <label class="form-check form-check-inline col-xs-2 col-sm-3 col-md-3 col-lg-2">
                 <input class="form-check-input" type="radio" name="radIntTransac" id="radIntTransac2" value="option2">
                 <small class="form-check-label" for="radIntTransac2">Préstamos</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
+              <label class="form-check form-check-inline col-xs-2 col-sm-3 col-md-3 col-lg-2">
                 <input class="form-check-input" type="radio" name="radIntTransac" id="radIntTransac3" value="option3">
                 <small class="form-check-label" for="radIntTransac3">Inversiones</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
+              <label class="form-check form-check-inline col-xs-2 col-sm-3 col-md-2 col-lg-2">
                 <input class="form-check-input" type="radio" name="radIntTransac" id="radIntTransac4" value="option4">
                 <small class="form-check-label" for="radIntTransac4">Giros</small>
               </label>
+              <label class="form-check form-check-inline col-xs-2 col-sm-3 col-md-2 col-lg-2">
+                  <input class="form-check-input" type="radio" name="radIntTransac" id="radIntTransac5" value="option5">
+                  <small class="form-check-label" for="radIntTransac5">Exportaciones</small>
+                </label>
             </div>
           </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-5">
-            <div class="col-lg-5">
-              <label>Posee Cuenta en Moneda Extranjera</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-10">
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-5">
+              <label class="col-xs-12 col-sm-4 col-md-3 col-lg-6">Posee Cuenta en Moneda Extranjera</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-8 col-lg-5">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radIntCta" id="radIntCta1" value="option1" required="true">
                 <small class="form-check-label" for="radIntCta1">Si</small>
               </label>
-              <label class="form-check form-check-inline col-lg-2">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radIntCta" id="radIntCta2" value="option2" required="true">
                 <small class="form-check-label" for="radIntCta2">No</small>
               </label>
             </div>
           </div>
-          <div class="form-group col-lg-6">
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-5">
-                <input class="form-check-input" type="radio" name="radIntTransac" id="radIntTransac5" value="option5">
-                <small class="form-check-label" for="radIntTransac5">Exportaciones</small>
-              </label>
-              <label class="form-check form-check-inline col-lg-4">
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-6">
+            <div class="form-check-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">              
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <input class="form-check-input" type="radio" name="radIntTransac" id="radIntTransac6" value="option6">
                 <small class="form-check-label" for="radIntTransac6">Pago de Servicios</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <input class="form-check-input" type="radio" name="radIntTransac" id="radIntTransac2" value="option7">
                 <small class="form-check-label" for="radIntTransac7">Remesas</small>
               </label>
-              <label class="form-check form-check-inline col-lg-4">
+              <label class="form-check form-check-inline col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <input class="form-check-input" type="radio" name="radIntTransac" id="radIntTransac3" value="option8">
                 <small class="form-check-label" for="radIntTransac8">Otras</small>
               </label>
             </div>
           </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label for="IntOther">¿Cuáles?</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="text" class="form-control" id="IntOther" >
-              </div>
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="IntOther" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">¿Cuáles?</label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="IntOther">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label for="IntAccountNum">Número Cuenta</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="number" class="form-control" id="IntAccountNum" >
-              </div>
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="IntAccountNum" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Número Cuenta</label>
+            <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="IntAccountNum">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label for="IntCurrency">Moneda</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="text" class="form-control" id="IntCurrency" >
-              </div>
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="IntCurrency" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Moneda</label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="IntCurrency">
           </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label for="IntBank">Banco</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="text" class="form-control" id="IntBank" >
-              </div>
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="IntBank" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Banco</label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="IntBank">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label for="IntCountry">País</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="text" class="form-control" id="IntCountry" >
-              </div>
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="IntCountry" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">País</label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="IntCountry">
           </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-3">
-              <label for="IntCity">Ciudad</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="text" class="form-control" id="IntCity" >
-              </div>
-            </div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <label for="IntCity" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Ciudad</label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="IntCity">
           </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-6">
-            <div class="col-lg-4">
-              <label>Tipo de Producto</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-6">
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-4">
+              <label class="col-xs-12 col-sm-4 col-md-4 col-lg-5">Tipo de Producto</label>
+            <div class="form-check-inline col-xs-12 col-sm-7 col-md-5 col-lg-6">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radIntProduct" id="radIntProduct1" value="option1">
                 <small class="form-check-label" for="radIntProduct1">Cuenta Corriente</small>
               </label>
-              <label class="form-check form-check-inline col-lg-6">
+              <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <input class="form-check-input" type="radio" name="radIntProduct" id="radIntProduct2" value="option2">
                 <small class="form-check-label" for="radIntProduct2">Cuenta Ahorros</small>
               </label>
             </div>
           </div>
-        </div>
-        <div class="form-row col-lg-12">
-          <div class="col-lg-4">
-            <label for="IntResource">Recursos Mensuales<small>(Moneda extranjera) por concepto de operaciones internacionales</small></label>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="IntResourCash">Efectivo</label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="IntResourCash" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
+          <label for="IntResource" class="col-xs-12 col-sm-4 col-md-12 col-lg-2">Recursos Mensuales<small>(Moneda extranjera) por operaciones internacionales</small></label>
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">            
+            <label for="IntResourCash" class="col-xs-12 col-sm-4 col-md-5 col-lg-3">Efectivo</label>
+            <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-9">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">$</span>
               </div>
+              <input type="number" class="form-control" id="IntResourCash" placeholder="0.00" aria-describedby="inputGroupPrepend">
             </div>
           </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-4">
-              <label for="IntResourCheck">Cheque</label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="IntResourCheck" placeholder="0.00" aria-describedby="inputGroupPrepend"
-                  >
+          <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+            <label for="IntResourCheck" class="col-xs-12 col-sm-4 col-md-5 col-lg-3">Cheque</label>
+            <div class="input-group col-xs-12 col-sm-8 col-md-7 col-lg-9">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">$</span>
               </div>
+              <input type="number" class="form-control" id="IntResourCheck" placeholder="0.00" aria-describedby="inputGroupPrepend">
             </div>
           </div>
-          <div class="form-group col-lg-2">
+          <div class="form-group col-xs-2 col-sm-2 col-md-3 col-lg-2">
             <button type="button" id="btnSubmit6" onclick="getSection(8,7)" class="btn btn-success btn-lg" disabled>Continuar</button>
           </div>
-        </div>
       </form>
     </section>
     <!-- FIN OPERACIONES INTERNACIONALES -->
     <!-- REFERENCIAS FAMILIARES -->
-    <section>
+    <section class="row">
       <div class="form-row col-lg-12">
         <label class="text-center col-lg-12 font-weight-bold">REFERENCIAS FAMILIARES (Que no viva con usted)</label>
       </div>
-      <form id="FamilyRef" class="form-inline">
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-6">
-            <div class="col-lg-3">
-              <label for="FamilyRefName">Nombres y Apellidos</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="text" class="form-control" id="FamilyRefName" required="true">
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-6">
-            <div class="col-lg-3">
-              <label for="FamilyRefCity">Ciudad</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="text" class="form-control" id="FamilyRefCity" required="true">
-              </div>
-            </div>
-          </div>
+      <form id="FamilyRef" class="form-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-6">
+          <label for="FamilyRefName" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Nombres y Apellidos</label>
+            <input type="text" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="FamilyRefName" required="true">
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-5">
-            <div class="col-lg-3">
-              <label for="FamilyRefPhone">Teléfono Fijo/Móvil</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="number" class="form-control" id="FamilyRefPhone" min="0" required="true">
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-5">
-            <div class="col-lg-3">
-              <label for="FamilyRefRelat">Parentesco</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="text" class="form-control" id="FamilyRefRelat" required="true">
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-2">
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <label for="FamilyRefCity" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Ciudad</label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="FamilyRefCity" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-5">
+          <label for="FamilyRefPhone" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Teléfono Fijo/Móvil</label>
+          <input type="number" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="FamilyRefPhone" min="0" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-5">
+          <label for="FamilyRefRelat" class="col-xs-12 col-sm-4 col-md-5 col-lg-4">Parentesco</label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-7 col-lg-8" id="FamilyRefRelat" required="true">
+        </div>
+          <div class="form-group col-xs-2 col-sm-2 col-md-3 col-lg-2">
             <button type="button" id="btnSubmit7" onclick="getSection(9,8)" class="btn btn-success btn-lg" disabled>Continuar</button>
           </div>
-        </div>
       </form>
     </section>
     <!-- FIN REFERENCIAS FAMILIARES -->
     <!-- REFERENCIAS PERSONALES -->
-    <section>
+    <section class="row">
       <div class="form-row col-lg-12">
         <label class="text-center col-lg-12 font-weight-bold">REFERENCIAS PERSONALES (Que no viva con usted)</label>
       </div>
-      <form id="PersonRef" class="form-inline">
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-6">
-            <div class="col-lg-3">
-              <label for="PersonRefName">Nombres y Apellidos</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="text" class="form-control" id="PersonRefName" required="true">
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-6">
-            <div class="col-lg-3">
-              <label for="PersonRefCity">Ciudad/Municipio</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="text" class="form-control" id="PersonRefCity" required="true">
-              </div>
-            </div>
-          </div>
+      <form id="PersonRef" class="form-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-6">
+          <label for="PersonRefName" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Nombres y Apellidos</label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="PersonRefName" required="true">
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-5">
-            <div class="col-lg-3">
-              <label for="PersonRefPhone">Teléfono Fijo</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="number" class="form-control" id="PersonRefPhone" min="0">
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-5">
-            <div class="col-lg-3">
-              <label for="PersonRefCell">Teléfono Móvil</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="number" class="form-control" id="PersonRefCell" min="0" required="true">
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-2">
-            <button type="button" id="btnSubmit8" onclick="getSection(10,9)" class="btn btn-success btn-lg" disabled>Continuar</button>
-          </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <label for="PersonRefCity" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Ciudad/ Municipio</label>
+              <input type="text" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="PersonRefCity" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-5">
+            <label for="PersonRefPhone" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Teléfono Fijo</label>
+              <input type="number" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="PersonRefPhone" min="0">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-5">
+            <label for="PersonRefCell" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Teléfono Móvil</label>
+              <input type="number" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="PersonRefCell" min="0" required="true">
+        </div>
+        <div class="form-group col-xs-2 col-sm-2 col-md-3 col-lg-2">
+          <button type="button" id="btnSubmit8" onclick="getSection(10,9)" class="btn btn-success btn-lg" disabled>Continuar</button>
         </div>
       </form>
     </section>
     <!-- FIN REFERENCIAS PERSONALES -->
     <!-- FORMA DE DESEMBOLSO -->
-    <section>
+    <section class="row">
       <div class="form-row col-lg-12">
         <label class="text-center col-lg-12 font-weight-bold">FORMA DE DESEMBOLSO CRÉDITO</label>
       </div>
-      <form id="Outlay" class="form-inline">
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-5">
-            <div class="col-lg-4">
-              <label for="OutlayTo">Autorizo Realizar el Desembolso A </label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <input type="text" class="form-control" id="OutlayTo" required="true">
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-3">
-            <div class="col-lg-2">
-              <label>Cuenta</label>
-            </div>
-            <div class="form-check-inline">
-              <label class="form-check form-check-inline col-lg-8">
-                <input class="form-check-input" type="radio" name="radOutlayCta" id="radOutlayCta1" value="option1" required="true">
-                <small class="form-check-label" for="radOutlayCta1">Ahorros</small>
-              </label>
-              <label class="form-check form-check-inline col-lg-6">
-                <input class="form-check-input" type="radio" name="radOutlayCta" id="radOutlayCta2" value="option2" required="true">
-                <small class="form-check-label" for="radOutlayCta2">Corriente</small>
-              </label>
-            </div>
-          </div>
-          <div class="form-group col-lg-4">
-            <div class="col-lg-4">
-              <label for="OutlayEntity">Entidad </label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <input type="text" class="form-control" id="OutlayEntity" required="true">
-              </div>
-            </div>
+      <form id="Outlay" class="form-inline col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-5">
+          <label for="OutlayTo" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Autorizo Realizar el Desembolso A </label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="OutlayTo" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-3">
+          <label class="col-xs-12 col-sm-4 col-md-4 col-lg-5">Cuenta</label>
+          <div class="form-check-inline col-xs-12 col-sm-7 col-md-5 col-lg-6">
+            <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <input class="form-check-input" type="radio" name="radOutlayCta" id="radOutlayCta1" value="option1" required="true">
+              <small class="form-check-label" for="radOutlayCta1">Ahorros</small>
+            </label>
+            <label class="form-check form-check-inline col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <input class="form-check-input" type="radio" name="radOutlayCta" id="radOutlayCta2" value="option2" required="true">
+              <small class="form-check-label" for="radOutlayCta2">Corriente</small>
+            </label>
           </div>
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-5">
-            <div class="col-lg-3">
-              <label for="OutlayCtaNum">No. Cuenta</label>
-            </div>
-            <div class="col-lg-9">
-              <div class="input-group">
-                <input type="number" class="form-control" id="OutlayCtaNum" required="true" >
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-7">
-            <div class="col-lg-4">
-              <label for="OutlayCheckTo">Cheque a Nombre De</label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <input type="text" class="form-control" id="OutlayCheckTo" required="true">
-              </div>
-            </div>
-          </div>          
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <label for="OutlayEntity" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Entidad </label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="OutlayEntity" required="true">
         </div>
-        <div class="form-row col-lg-12">
-          <div class="form-group col-lg-5">
-            <div class="col-lg-4">
-              <label for="OutlayId">Identificación</label>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-5">
+          <label for="OutlayCtaNum" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">No. Cuenta</label>
+          <input type="number" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="OutlayCtaNum" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-7">
+          <label for="OutlayCheckTo" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Cheque a Nombre De</label>
+          <input type="text" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="OutlayCheckTo" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-5">
+          <label for="OutlayId" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Identificación</label>
+          <input type="number" class="form-control col-xs-12 col-sm-8 col-md-8 col-lg-8" id="OutlayId" required="true">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-5">
+          <label for="OutlayValue" class="col-xs-12 col-sm-4 col-md-4 col-lg-3">Valor</label>
+          <div class="input-group col-xs-12 col-sm-8 col-md-8 col-lg-9">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">$</span>
             </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <input type="number" class="form-control" id="OutlayId" required="true">
-              </div>
-            </div>
+            <input type="number" class="form-control" id="OutlayValue" placeholder="0.00" min="0" aria-describedby="inputGroupPrepend"
+              required="true">
           </div>
-          <div class="form-group col-lg-5">
-            <div class="col-lg-4">
-              <label for="OutlayValue">Valor</label>
-            </div>
-            <div class="col-lg-8">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">$</span>
-                </div>
-                <input type="number" class="form-control" id="OutlayValue" placeholder="0.00" min="0" aria-describedby="inputGroupPrepend"
-                required="true">
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-lg-2">
-            <button type="button" id="btnSubmit9" onclick="getSection(11,9)" class="btn btn-success btn-lg" disabled>Imprimir</button>
-          </div>
+        </div>
+        <div class="form-group col-xs-2 col-sm-2 col-md-3 col-lg-2">
+          <button type="button" id="btnSubmit9" onclick="getSection(11,9)" class="btn btn-success btn-lg" disabled>Imprimir</button>
         </div>
       </form>
     </section>
